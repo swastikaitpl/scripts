@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # config
-drive_init_dir=~/Documents/Dev/data/
+drive_init_dir=~/Documents/Dev/backup/
 backup_dir=backup/booma/prod/pgdb/booma/
 conn='postgresql://postgres:kZryOr%28%27%2AvM%28siJ%5EJ%27W0@139.59.83.31:5432/postgres'
 x=$(date +"%y-%m-%d")

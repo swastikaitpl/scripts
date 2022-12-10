@@ -1,6 +1,6 @@
 #!/bin/sh
 
-backup_dir=~/Documents/Dev/data/Backup/
+backup_dir=~/Documents/Dev/backup
 x=$(date +"%y-%m-%d")
 
 # creating directory
