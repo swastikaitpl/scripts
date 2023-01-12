@@ -6,12 +6,12 @@ if [ "$#" -ne 2 ]; then
 fi
 
 # config
-type=live
-#type=dev
+#type=live
+type=dev
 #dev
 if [ "dev" == "$type" ]; then
   ssh_key=~/Documents/Dev/text/squares/ssh/booma-dev/booma-dev
-  deploy_user=root
+  deploy_user=booma
   deploy_host=146.190.8.32
   ssh_port=22
 fi
