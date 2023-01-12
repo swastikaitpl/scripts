@@ -4,8 +4,8 @@
 src_type=booma
 #src_type=plcampus
 #src_type=plcampusfrontend
-type=live
-#type=dev
+#type=live
+type=dev
 
 booma_src_root=~/Documents/Dev/java/Booma/booma/
 booma_target_jar="booma-0.0.1-SNAPSHOT"
