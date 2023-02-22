@@ -72,9 +72,11 @@ fi
 
 # init
 target_jar="${src_root}target/${target_jar}.jar"
+temp_deploy_jar="${deploy_dir}temp_deploy.jar"
 deploy_jar="${deploy_dir}deploy.jar"
 deploy_domain="${deploy_user}@${deploy_host}"
 scp_deploy_prefix="${deploy_domain}:"
+move_script="mv ${temp_deploy_jar} ${deploy_jar}"
 deploy_script="bash ${deploy_dir}restart.sh"
 
 # packaging
@@ -82,7 +84,10 @@ cd "$src_root"
 mvn package
 
 # uploading
-scp -i $ssh_key -P $ssh_port "$target_jar" $scp_deploy_prefix$deploy_jar
+scp -i $ssh_key -P $ssh_port "$target_jar" $scp_deploy_prefix$temp_deploy_jar
+
+# moving
+ssh -i $ssh_key -p $ssh_port  $deploy_domain $move_script
 
 # restarting
 ssh -i $ssh_key -p $ssh_port  $deploy_domain $deploy_script
